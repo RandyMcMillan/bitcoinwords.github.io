@@ -17,7 +17,7 @@ feature_row:
     alt: "Read the Journals"
     title: "Journals"
     excerpt: "All the journals dating back to February 2018."
-    url: "https://bitcoinwords.github.io/categories/journals/"
+    url: "/categories/journals/"
     btn_label: "Read Journals"
     btn_class: "btn--primary"
   - image_path: assets/images/links-card.png
@@ -31,7 +31,7 @@ feature_row:
     alt: "Bitcoin Financial Journal"
     title: "Bitcoin Financial Journal"
     excerpt: "A comprehensive collection of on and off chain indicators and valuation models for Bitcoin."
-    url: "https://bitcoinwords.github.io/bitcoin-financial-journal"
+    url: "/bitcoin-financial-journal"
     btn_label: "Read the Bitcoin Financial Journal"
     btn_class: "btn--primary"
 feature_row2:
@@ -39,7 +39,7 @@ feature_row2:
     alt: "WORDS 101"
     title: "WORDS 101"
     excerpt: "WORDS 101 is a quick FAQ about Bitcoin and resources to get you started."
-    url: "https://bitcoinwords.github.io/101/"
+    url: "/101/"
     btn_label: "WORDS 101"
     btn_class: "btn--warning"
 feature_row3:
@@ -47,7 +47,7 @@ feature_row3:
     alt: "WORDS Anthology"
     title: "WORDS Anthology"
     excerpt: "WORDS Anthology are author-specific collections of writing."
-    url: "https://bitcoinwords.github.io/categories/anthology/"
+    url: "/categories/anthology/"
     btn_label: "WORDS Anthology"
     btn_class: "btn--warning"
 row4:
@@ -55,21 +55,21 @@ row4:
     alt: "WORDS 101"
     title: "WORDS 101"
     excerpt: "WORDS 101 is a quick FAQ about Bitcoin and resources to get you started."
-    url: "https://bitcoinwords.github.io/101/"
+    url: "/101/"
     btn_label: "WORDS 101"
     btn_class: "btn--primary"
   - image_path: /assets/images/anthology.png
     alt: "WORDS Anthology"
     title: "WORDS Anthology"
     excerpt: "WORDS Anthology are author-specific collections of writing."
-    url: "https://bitcoinwords.github.io/categories/anthology/"
+    url: "/categories/anthology/"
     btn_label: "WORDS Anthology"
     btn_class: "btn--primary"
   - image_path: /assets/images/grants.png
     alt: "Bitcoin Grants Tracker"
     title: "Bitcoin Grants Tracker"
     excerpt: "A table that shows Bitcoin development grants."
-    url: "https://bitcoinwords.github.io/grants/"
+    url: "/grants/"
     btn_label: "Bitcoin Grants Tracker"
     btn_class: "btn--primary"
 ---
@@ -77,9 +77,9 @@ row4:
 ## About WORDS 
 **WORDS** is one of the founding journals of Bitcoin thought. The core mission of the project is to spread and preserve writings about Bitcoin for future generations.
 
-[<i class="fas fa-book"></i> Find out more](https://bitcoinwords.github.io/about/){: .btn .btn--warning}
+[<i class="fas fa-book"></i> Find out more](/about/){: .btn .btn--warning}
 
-[![](https://raw.githubusercontent.com/bitcoinwords/bitcoinwords.github.io/master/assets/images/splash-stats.png)](https://bitcoinwords.github.io/categories/journals/){: .align-center}
+[![](https://raw.githubusercontent.com/bitcoinwords/bitcoinwords.github.io/master/assets/images/splash-stats.png)](/categories/journals/){: .align-center}
 
 {% include feature_row %}
 

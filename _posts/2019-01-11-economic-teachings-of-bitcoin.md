@@ -35,7 +35,7 @@ defaults:
 * Part 3 [Technological Teachings of Bitcoin](https://cryptowords.github.io/cy19q2m4#technological-teachings-of-bitcoin)
 
 ***
-![classical art ](/assets/images/cy18/cy19q1m1/gigi-header.png){: .align-center}
+![classical art ](/assets/images/cy19q1/cy19q1m1/gigi-header.png){: .align-center}
 
 Money doesn't grow on trees. To believe that it does is foolish, and our parents make sure that we know about that by repeating this saying like a mantra. We are encouraged to use money wisely, to not spend it frivolously, and to save it in good times to help us through the bad. Money, after all, does not grow on trees.
 
