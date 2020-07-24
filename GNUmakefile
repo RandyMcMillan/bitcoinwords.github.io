@@ -57,9 +57,11 @@ shell:
 ifeq ($(CMD_ARGUMENTS),)
 	# no command is given, default to shell
 	docker-compose -p $(PROJECT_NAME)_$(HOST_UID) run --publish=4000:4000 --rm $(SERVICE_TARGET) sh
+	#docker-compose -p $(PROJECT_NAME)_$(HOST_UID) run --rm $(SERVICE_TARGET) sh
 else
 	# run the command
 	docker-compose -p $(PROJECT_NAME)_$(HOST_UID) run --publish=4000:4000 --rm $(SERVICE_TARGET) sh -c "$(CMD_ARGUMENTS)"
+	#docker-compose -p $(PROJECT_NAME)_$(HOST_UID) run --rm $(SERVICE_TARGET) sh -c "$(CMD_ARGUMENTS)"
 endif
 
 # Regular Makefile part for buildpypi itself

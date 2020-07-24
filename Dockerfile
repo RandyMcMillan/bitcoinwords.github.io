@@ -1,4 +1,4 @@
-FROM starefossen/ruby-node:2-6-alpine as base
+FROM starefossen/ruby-node:2-6-alpine as user
 
 ENV GITHUB_GEM_VERSION 202
 ENV JSON_GEM_VERSION 1.8.6
@@ -14,12 +14,29 @@ RUN apk --update add --virtual build_deps \
   && apk add git \
   && rm -rf /usr/lib/ruby/gems/*/cache/*.gem
 
-RUN apk update \
-    && apk add --no-cache \
-        bash
+RUN apk upgrade --update \
+ && apk add --no-cache libatomic readline readline-dev libxml2 libxml2-dev alpine-sdk vim bash sudo su-exec \
+        ncurses-terminfo-base ncurses-terminfo \
+        libxslt libxslt-dev zlib-dev zlib \
+        ruby ruby-dev yaml yaml-dev \
+        libffi-dev build-base git nodejs \
+        ruby-io-console ruby-irb ruby-json ruby-rake \
+ && gem install --no-document redcarpet kramdown maruku rdiscount RedCloth liquid pygments.rb \
+ && gem install --no-document sass safe_yaml \
+ && gem install --no-document jekyll -v 2.5 \
+ && gem install --no-document jekyll-paginate jekyll-sass-converter \
+ && gem install --no-document jekyll-sitemap jekyll-feed jekyll-redirect-from jekyll-include-cache \
+ && rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/* \
+ #&& apk del build-base zlib-dev ruby-dev readline-dev \
+ #           yaml-dev libffi-dev libxml2-dev \
+ && apk search --update
 
-FROM scratch as user
-COPY --from=base . .
+RUN gem install --no-document jekyll-sitemap jekyll-feed jekyll-redirect-from \
+jekyll-include-cache zeitwerk activesupport json algolia_html_extractor algoliasearch \
+httpclient filesize listen rough kramdown
+
+RUN gem update rails && gem update --system
+#RUN gem uninstall ffi && gem install ffi --platform=ruby
 
 ARG HOST_UID=${HOST_UID:-4000}
 ARG HOST_USER=${HOST_USER:-nodummy}
@@ -31,7 +48,10 @@ RUN [ "${HOST_USER}" == "root" ] || \
 USER ${HOST_USER}
 RUN ln -s /home/${HOST_USER}/bitcoinwords.github.io /usr/src/app
 WORKDIR /home/${HOST_USER}/bitcoinwords.github.io
-
+RUN cd /home/${HOST_USER}/bitcoinwords.github.io
+# make user=root
+#CMD [" bundle config build.nokogiri --use-system-libraries && bundle install && bundle exec jekyll serve -d /home/${HOST_USER}/bitcoinwords.github.io/_site --watch --force_polling -H 0.0.0.0 -P 4000 "]
+CMD [" bundle install && bundle exec jekyll serve -d /home/${HOST_USER}/bitcoinwords.github.io/_site --watch --force_polling -H 0.0.0.0 -P 4000 "]
 EXPOSE 4000 80
-CMD jekyll serve -d /home/${HOST_USER}/bitcoinwords.github.io/_site --watch --force_polling -H 0.0.0.0 -P 4000
+CMD [ "jekyll serve -d /home/${HOST_USER}/bitcoinwords.github.io/_site --watch --force_polling -H 0.0.0.0 -P 4000 "]
 

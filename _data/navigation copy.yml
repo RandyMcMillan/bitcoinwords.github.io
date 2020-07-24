@@ -3,19 +3,19 @@ main:
   - title: "Subscribe"
     url: https://mailchi.mp/59e9fda5b387/words
   - title: "Journals"
-    url: /categories/journals/
+    url: https://bitcoinwords.github.io/categories/journals/
   - title: "Posts"
-    url: /tags/
+    url: https://bitcoinwords.github.io/tags/
   - title: "About"
-    url: /about/
+    url: https://bitcoinwords.github.io/about/
   - title: "Contact"
-    url: /contact/
+    url: https://bitcoinwords.github.io/contact/
   - title: "Support"
-    url: /support/
+    url: https://bitcoinwords.github.io/support  
   - title: "Side Notes"
     url: https://jrjr.posthaven.com/
   - title: "Links"
-    url: https://bitcoinwords.github.io/links/docs/planet.news.html
+    url: https://bitcoinwords.github.io/links/docs/planet.news.html  
  
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
