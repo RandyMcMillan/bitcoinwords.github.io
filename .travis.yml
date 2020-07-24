@@ -1,8 +1,12 @@
 language: ruby
 cache: bundler
-gemfile: docs/Gemfile
+gemfile: Gemfile
+git:
+  depth: 2
 script:
-  - bundle exec jekyll algolia --source docs --destination docs/_site --config docs/_config.yml
+  - bundle install
+  - bundle exec jekyll build -I -V --profile --strict_front_matter --unpublished JEKYLL_ENV=travis
+    #  - bundle exec jekyll serve incremental -H 0.0.0.0 -P 4000
 branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
